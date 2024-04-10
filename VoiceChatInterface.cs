@@ -38,6 +38,12 @@ namespace OpenVoiceSharp
         /// </summary>
         public bool ApplySoftClipping { get; private set; } = false;
 
+        /// <summary>
+        /// Defines the soft clipping threshold factor for soft clipping. 
+        /// Set to 3.0 by default.
+        /// </summary>
+        public double SoftClippingThresholdFactor = 3.0;
+
         public int GetChannelsAmount() => Stereo ? 2 : 1;
 
         // instances
@@ -94,7 +100,7 @@ namespace OpenVoiceSharp
                 for (int i = 0; i < decodedLength; i += 2)
                 {
                     short sample = BitConverter.ToInt16(decodedOpusData, i);
-                    short clippedSample = VoiceUtilities.ApplySoftClip(sample);
+                    short clippedSample = VoiceUtilities.ApplySoftClipping(sample, SoftClippingThresholdFactor);
                     byte[] clippedBytes = BitConverter.GetBytes(clippedSample);
                     Array.Copy(clippedBytes, 0, decodedOpusData, i, 2);
                 }

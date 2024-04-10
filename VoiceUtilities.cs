@@ -46,9 +46,9 @@
             }
         }
 
-        public static short ApplySoftClip(short sample)
+        public static short ApplySoftClipping(short sample, double thresholdFactor)
         {
-            const double threshold = 32767.0 / 3.0; // Adjust threshold as needed
+            double threshold = 32767.0 / thresholdFactor;
             double x = sample / 32767.0;
 
             return x >= 0 ? 
