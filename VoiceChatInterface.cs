@@ -4,7 +4,7 @@ using WebRtcVadSharp;
 
 namespace OpenVoiceSharp
 {
-    public abstract class VoiceChatInterface
+    public sealed class VoiceChatInterface
     {
         public const int FrameLength = 20; // 20 ms, for max compatibility
         public const int SampleRate = 48000; // base opus and RNNoise frequency and webrtc
@@ -40,7 +40,7 @@ namespace OpenVoiceSharp
 
         private readonly float[] FloatSamples;
 
-        public void ApplyNoiseSuppression(byte[] pcmData)
+        private void ApplyNoiseSuppression(byte[] pcmData)
         {
             // convert to float32
             VoiceUtilities.Convert16BitToFloat(pcmData, FloatSamples);
@@ -53,11 +53,11 @@ namespace OpenVoiceSharp
         }
 
         /// <summary>
-        /// Encodes and processes microphone data. Also handles noise suppression if needed.
+        /// Encodes and processes audio data. Also handles noise suppression if needed.
         /// </summary>
         /// <param name="pcmData">The 16 bit PCM data according to your needs.</param>
         /// <returns>Encoded Opus data.</returns>
-        public (byte[] encodedOpusData, int encodedLength) FeedMicrophoneData(byte[] pcmData, int length)
+        public (byte[] encodedOpusData, int encodedLength) SubmitAudioData(byte[] pcmData, int length)
         {
             if (EnableNoiseSuppression)
                 ApplyNoiseSuppression(pcmData);
@@ -65,7 +65,7 @@ namespace OpenVoiceSharp
             return (OpusEncoder.Encode(pcmData, length, out int encodedLength), encodedLength);
         }
 
-        public byte[] ProcessVoiceData(byte[] decodedOpusData, int decodedLength)
+        private byte[] ProcessVoiceData(byte[] decodedOpusData, int decodedLength)
         {
             // apply soft clipping
             if (ApplySoftClipping)

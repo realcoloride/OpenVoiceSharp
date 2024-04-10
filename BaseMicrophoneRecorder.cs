@@ -5,17 +5,17 @@ namespace OpenVoiceSharp
     /// <summary>
     /// Handles basic microphone recording for a voice chat interface using NAudio.
     /// </summary>
-    public abstract class BaseMicrophoneRecorder
+    public sealed class BaseMicrophoneRecorder
     {
         // events
         public delegate void AudioInputChangedEvent(int index, WaveInCapabilities microphone);
-        public static event AudioInputChangedEvent AudioInputChanged;
+        public event AudioInputChangedEvent AudioInputChanged;
 
         public delegate void MicrophoneDataAvailableEvent(byte[] pcmData, int length);
-        public static event MicrophoneDataAvailableEvent DataAvailable;
+        public event MicrophoneDataAvailableEvent DataAvailable;
 
         public delegate void MicrophoneStoppedRecordingEvent(StoppedEventArgs arguments);
-        public static event MicrophoneStoppedRecordingEvent RecordingStopped;
+        public event MicrophoneStoppedRecordingEvent RecordingStopped;
 
         // wave format/recorder
         private readonly WaveFormat WaveFormat;
