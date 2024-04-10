@@ -7,7 +7,7 @@
         // basic recorder
         public static void Main()
         {
-            BaseMicrophoneRecorder recorder = new();
+            BasicMicrophoneRecorder recorder = new();
 
             recorder.DataAvailable += WhenDataAvailable;
             recorder.StartRecording();
@@ -16,8 +16,8 @@
         // encoding & sending
         private static void WhenDataAvailable(byte[] pcmData, int length)
         {
-            (byte[] encodedResult, int encodedLength) = voiceChatInterface.SubmitAudioData(pcmData, length);
-            Send(encodedResult, encodedLength);
+            (byte[] encodedData, int encodedLength) = voiceChatInterface.SubmitAudioData(pcmData, length);
+            Send(encodedData, encodedLength);
         }
         private static void Send(byte[] encodedData, int encodedLength)
         {

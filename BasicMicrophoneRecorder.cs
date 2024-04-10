@@ -5,7 +5,7 @@ namespace OpenVoiceSharp
     /// <summary>
     /// Handles basic microphone recording for a voice chat interface using NAudio.
     /// </summary>
-    public sealed class BaseMicrophoneRecorder
+    public sealed class BasicMicrophoneRecorder
     {
         // events
         public delegate void AudioInputChangedEvent(int index, WaveInCapabilities microphone);
@@ -70,7 +70,7 @@ namespace OpenVoiceSharp
         private void WhenDataAvailable(object? sender, WaveInEventArgs e) => DataAvailable?.Invoke(e.Buffer, e.BytesRecorded);
 
 
-        public BaseMicrophoneRecorder(bool stereo = false)
+        public BasicMicrophoneRecorder(bool stereo = false)
         {
             // wave format for recording
             WaveFormat = new(rate: VoiceChatInterface.SampleRate, bits: 16, channels: stereo ? 2 : 1);
