@@ -1,5 +1,6 @@
 ﻿using OpusDotNet;
 using RNNoise.NET;
+using System;
 using WebRtcVadSharp;
 
 namespace OpenVoiceSharp
@@ -77,7 +78,7 @@ namespace OpenVoiceSharp
         {
             if (EnableNoiseSuppression)
                 ApplyNoiseSuppression(pcmData);
-
+            
             return (OpusEncoder.Encode(pcmData, length, out int encodedLength), encodedLength);
         }
 
