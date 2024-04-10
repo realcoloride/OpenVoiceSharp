@@ -11,11 +11,32 @@ namespace OpenVoiceSharp
         public const int DefaultBitrate = 16000; // 16kbps, decent enough for voice chatting
 
         // properties
-        public int Bitrate { get; protected set; } = DefaultBitrate;
-        public bool Stereo { get; protected set; } = false;
-        public bool EnableNoiseSuppression { get; protected set; } = true;
-        public bool FavorAudioStreaming { get; protected set; } = false;
-        public bool ApplySoftClipping { get; protected set; } = false;
+
+        /// <summary>
+        /// Defines the quality of the audio data.
+        /// A good quality bitrate for voice chatting could be 16 kbps (16000).
+        /// </summary>
+        public int Bitrate { get; private set; } = DefaultBitrate;
+        /// <summary>
+        /// Defines if the audio will be in stereo or not. If the input data doesnt match the channel count,
+        /// it will be forced into if this is enabled or not.
+        /// </summary>
+        public bool Stereo { get; private set; } = false;
+        /// <summary>
+        /// Defines if noise suppression (RNNoise) is enabled. RNNoise runs on CPU.
+        /// Disable if this is using too much usage on lower spec devices.
+        /// </summary>
+        public bool EnableNoiseSuppression { get; set; } = true;
+        /// <summary>
+        /// Defines if opus should favor the audio quality for audio streaming.
+        /// Makes packets bigger with less loss but is useless for simple voice chatting and discussion.
+        /// </summary>
+        public bool FavorAudioStreaming { get; private set; } = false;
+        /// <summary>
+        /// Defines if soft clipping should be used. If enabled, audio will be clamped to make sure
+        /// it does not clip or saturate.
+        /// </summary>
+        public bool ApplySoftClipping { get; private set; } = false;
 
         public int GetChannelsAmount() => Stereo ? 2 : 1;
 
@@ -90,12 +111,14 @@ namespace OpenVoiceSharp
         public VoiceChatInterface(
             int bitrate = DefaultBitrate, 
             bool stereo = false, 
+            bool enableNoiseSuppression = true,
             bool favorAudioStreaming = false, 
             bool applySoftClipping = true,
             OperatingMode? vadOperatingMode = null
         ) {
             Bitrate = bitrate;
             Stereo = stereo;
+            EnableNoiseSuppression = enableNoiseSuppression;
             FavorAudioStreaming = favorAudioStreaming;
             ApplySoftClipping = applySoftClipping;
             int channels = GetChannelsAmount();
