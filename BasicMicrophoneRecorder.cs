@@ -30,7 +30,7 @@ namespace OpenVoiceSharp
             if (index < 0) return;
 
             WaveInCapabilities[] microphones = GetMicrophones();
-            if (index > microphones.Length) return;
+            if (index > microphones.Length - 1) return;
 
             CurrentMicrophone = GetMicrophones()[index];
             CurrentMicrophoneIndex = index;
