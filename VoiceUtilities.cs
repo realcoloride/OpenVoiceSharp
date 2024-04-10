@@ -45,15 +45,5 @@
                 pcmIndex += 2;
             }
         }
-
-        public static short ApplySoftClipping(short sample, double thresholdFactor)
-        {
-            double threshold = 32767.0 / thresholdFactor;
-            double x = sample / 32767.0;
-
-            return x >= 0 ? 
-                (short)(threshold * (1 - Math.Exp(-x / threshold))) : 
-                (short)(-threshold * (1 - Math.Exp(x / threshold)));
-        }
     }
 }

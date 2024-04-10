@@ -32,17 +32,6 @@ namespace OpenVoiceSharp
         /// Makes packets bigger with less loss but is useless for simple voice chatting and discussion.
         /// </summary>
         public bool FavorAudioStreaming { get; private set; } = false;
-        /// <summary>
-        /// Defines if soft clipping should be used. If enabled, audio will be clamped to make sure
-        /// it does not clip or saturate.
-        /// </summary>
-        public bool ApplySoftClipping { get; private set; } = false;
-
-        /// <summary>
-        /// Defines the soft clipping threshold factor for soft clipping. 
-        /// Set to 3.0 by default.
-        /// </summary>
-        public double SoftClippingThresholdFactor = 3.0;
 
         public int GetChannelsAmount() => Stereo ? 2 : 1;
 
@@ -92,41 +81,20 @@ namespace OpenVoiceSharp
             return (OpusEncoder.Encode(pcmData, length, out int encodedLength), encodedLength);
         }
 
-        private byte[] ProcessVoiceData(byte[] decodedOpusData, int decodedLength)
-        {
-            // apply soft clipping
-            if (ApplySoftClipping)
-            {
-                for (int i = 0; i < decodedLength; i += 2)
-                {
-                    short sample = BitConverter.ToInt16(decodedOpusData, i);
-                    short clippedSample = VoiceUtilities.ApplySoftClipping(sample, SoftClippingThresholdFactor);
-                    byte[] clippedBytes = BitConverter.GetBytes(clippedSample);
-                    Array.Copy(clippedBytes, 0, decodedOpusData, i, 2);
-                }
-            }
-
-            return decodedOpusData;
-        }
-
         public (byte[] decodedOpusData, int decodedLength) WhenDataReceived(byte[] encodedData, int length)
-            => (ProcessVoiceData(
-                    OpusDecoder.Decode(encodedData, length, out int decodedLength), decodedLength), 
-                decodedLength);
+            => (OpusDecoder.Decode(encodedData, length, out int decodedLength), decodedLength);
 
         public VoiceChatInterface(
             int bitrate = DefaultBitrate, 
             bool stereo = false, 
             bool enableNoiseSuppression = true,
             bool favorAudioStreaming = false, 
-            bool applySoftClipping = true,
             OperatingMode? vadOperatingMode = null
         ) {
             Bitrate = bitrate;
             Stereo = stereo;
             EnableNoiseSuppression = enableNoiseSuppression;
             FavorAudioStreaming = favorAudioStreaming;
-            ApplySoftClipping = applySoftClipping;
             int channels = GetChannelsAmount();
 
             // fill float samples for noise suppression
