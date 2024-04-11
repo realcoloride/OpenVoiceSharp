@@ -6,8 +6,17 @@ namespace OpenVoiceSharp
 {
     public sealed class VoiceChatInterface
     {
+        /// <summary>
+        /// Opus frame length. (20ms)
+        /// </summary>
         public const int FrameLength = 20; // 20 ms, for max compatibility
+        /// <summary>
+        /// Opus/RNNoise/WebRTC sample rate. (48kHz)
+        /// </summary>
         public const int SampleRate = 48000; // base opus and RNNoise frequency and webrtc
+        /// <summary>
+        /// Default bitrate. (16kbps)
+        /// </summary>
         public const int DefaultBitrate = 16000; // 16kbps, decent enough for voice chatting
 
         // properties
@@ -33,7 +42,7 @@ namespace OpenVoiceSharp
         /// </summary>
         public bool FavorAudioStreaming { get; private set; } = false;
 
-        public int GetChannelsAmount() => Stereo ? 2 : 1;
+        private int ChannelsAmount => Stereo ? 2 : 1;
 
         // instances
         private readonly OpusEncoder OpusEncoder;
@@ -53,7 +62,7 @@ namespace OpenVoiceSharp
         /// <returns>If voice activity was detected in the frame.</returns>
         public bool IsSpeaking(byte[] pcmData) => VoiceActivityDetector.HasSpeech(pcmData);
 
-
+        // stores float samples if needed
         private readonly float[] FloatSamples;
 
         private void ApplyNoiseSuppression(byte[] pcmData)
@@ -72,7 +81,7 @@ namespace OpenVoiceSharp
         /// Encodes and processes audio data. Also handles noise suppression if needed.
         /// </summary>
         /// <param name="pcmData">The 16 bit PCM data according to your needs.</param>
-        /// <returns>Encoded Opus data.</returns>
+        /// <returns>The encoded Opus data, along with its length.</returns>
         public (byte[] encodedOpusData, int encodedLength) SubmitAudioData(byte[] pcmData, int length)
         {
             if (EnableNoiseSuppression)
@@ -81,9 +90,23 @@ namespace OpenVoiceSharp
             return (OpusEncoder.Encode(pcmData, length, out int encodedLength), encodedLength);
         }
 
+        /// <summary>
+        /// Decodes the opus packet.
+        /// </summary>
+        /// <param name="encodedData">The encoded 16 bit PCM opus data</param>
+        /// <param name="length">The length of the data</param>
+        /// <returns>The decoded Opus data, along with its length.</returns>
         public (byte[] decodedOpusData, int decodedLength) WhenDataReceived(byte[] encodedData, int length)
             => (OpusDecoder.Decode(encodedData, length, out int decodedLength), decodedLength);
 
+        /// <summary>
+        /// Creates a brand new OpenVoiceSharp voice chat interface to manage voice chat.
+        /// </summary>
+        /// <param name="bitrate">Quality of the audio.</param>
+        /// <param name="stereo">Handle stereo?</param>
+        /// <param name="enableNoiseSuppression">Enable RNNoise basic noise suppression.</param>
+        /// <param name="favorAudioStreaming">Favor audio streaming and less compressed packets to favor audio quality.</param>
+        /// <param name="vadOperatingMode">The VAD (voice activity detection) operating mode.</param>
         public VoiceChatInterface(
             int bitrate = DefaultBitrate, 
             bool stereo = false, 
@@ -95,7 +118,7 @@ namespace OpenVoiceSharp
             Stereo = stereo;
             EnableNoiseSuppression = enableNoiseSuppression;
             FavorAudioStreaming = favorAudioStreaming;
-            int channels = GetChannelsAmount();
+            int channels = ChannelsAmount;
 
             // fill float samples for noise suppression
             FloatSamples = new float[VoiceUtilities.GetSampleSize(SampleRate, FrameLength, channels) / 2];

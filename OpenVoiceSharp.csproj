@@ -13,9 +13,10 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/realcoloride/OpenVoiceSharp</PackageProjectUrl>
     <PackageTags>voice; vc; voice-chat; voip; voicechat; audiostreaming; audio; realtime</PackageTags>
-    <PackageReleaseNotes>Initial release build</PackageReleaseNotes>
+    <PackageReleaseNotes>More comments and details for documentation.</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
