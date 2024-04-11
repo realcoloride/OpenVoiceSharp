@@ -42,6 +42,10 @@ soon enough:tm:
 
 Everything you need to know or do can be found [in the wiki](https://github.com/realcoloride/OpenVoiceSharp/wiki).
 
+## Contribute
+
+soon enough:tm:
+
 ## Troubleshooting
 
 soon enough:tm:
