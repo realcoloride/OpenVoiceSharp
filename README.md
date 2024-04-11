@@ -38,13 +38,9 @@ So upon learning how to make VoIP myself, I decided to share the knowledge into 
 
 soon enough:tm:
 
-## Installation
+## Installation & Usage
 
-soon enough:tm:
-
-## Usage
-
-soon enough:tm:
+Everything you need to know or do can be found [in the wiki](https://github.com/realcoloride/OpenVoiceSharp/wiki).
 
 ## Troubleshooting
 
