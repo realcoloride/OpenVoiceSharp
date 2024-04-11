@@ -1,6 +1,5 @@
 ﻿using OpusDotNet;
 using RNNoise.NET;
-using System;
 using WebRtcVadSharp;
 
 namespace OpenVoiceSharp
