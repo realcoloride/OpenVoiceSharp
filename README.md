@@ -12,7 +12,7 @@ Agnostic VoIP Voice Chat and Audio Streaming C# library.
 
 ## Why did I make this?
 
-I believe that voice chat, proximity or not is an essential functionality for game immersion or multiplayer, or discussion. Though, when searching for a friendly open source/free alternative other than Steam's Voice API or Epic Online Services's Voice API, I could not find any, and to make matter worse, it was extremely difficult to get information around how voice chat/audio streaming essentially worked under the hood, which can make difficult for people to make their own voice chat implementation.
+I believe that voice chat, proximity or not is an essential functionality for game immersion or multiplayer, or discussion. Though, when searching for a friendly open source/free alternative other than Steam's Voice API or Epic Online Services's Voice API, I could not find any, and to make matters worse, it was extremely difficult to get information around how voice chat/audio streaming essentially worked under the hood, which can make difficult for people to make their own voice chat implementation.
 
 Most alternatives are paid (Vivox, Photon Voice, Dissonance etc...) & are mostly compatible for Unity, which can cause an issue for developers using their own game engine, app stack, or game engines like the Godot Engine.
 
