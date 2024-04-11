@@ -34,7 +34,7 @@ I also believe that implementation for such things should be easy to use and imp
 > **OpenVoiceSharp** is meant to be extremely basic and straightforward. Audio playback, modification (effects or more) and features such as groups, teams, muting should be left to implement by yourself. 
 > _**OpenVoiceSharp** just provides a basic way to encode and decode voice packets along with a basic microphone recorder._
 
-## Requierements
+## Requirements
 
 soon enough:tm:
 
