@@ -56,7 +56,7 @@ soon enough:tm:
 
 soon enough:tm:
 
-## License & Disclaimer
+## Licenses & Disclaimer
 
 **OpenVoiceSharp** uses the following libraries, so by using **OpenVoiceSharp**, you accept their license's conditions.
 
