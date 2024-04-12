@@ -38,10 +38,11 @@ So upon learning how to make VoIP myself, I decided to share the knowledge into 
 
 - Windows (64 bit)
 - .NET 6.0 and higher
-- Visual Studi
+- Visual Studio
 
 > [!WARNING]
-> **OpenVoiceSharp** currently only supports Windows 64 bit, atleast the dependencies do. I currently do not plan on integrating native support for MacOS, Linux, Android or other stuff, but if you feel like doing that, you can open a PR, contribute etc... (more soon)
+> **OpenVoiceSharp** currently only supports Windows 64 bit, atleast the dependencies do.
+> I currently do not plan on integrating native support for MacOS, Linux, Android or others but you can compile the libraries yourself and linking them.
 
 ## Installation & Usage
 
