@@ -61,7 +61,7 @@ soon enough:tm:
 **OpenVoiceSharp** uses the following libraries, so by using **OpenVoiceSharp**, you accept their license's conditions.
 
 > [!TIP]  
-> Most of the libraries used by **OpenVoiceSharp** are MIT, except for WebRTC's VAD, which contains the license from WebRTC.
+> Most of the libraries used by **OpenVoiceSharp** are MIT licensed, except for WebRTC's VAD, which contains the license from WebRTC.
 
 - [NAudio](https://github.com/naudio/NAudio) - Licensed MIT
 - [OpusDotNet](https://github.com/mrphil2105/OpusDotNet) - Licensed MIT
