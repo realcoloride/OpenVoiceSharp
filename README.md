@@ -42,7 +42,7 @@ So upon learning how to make VoIP myself, I decided to share the knowledge into 
 
 > [!WARNING]
 > **OpenVoiceSharp** currently only supports Windows 64 bit, atleast the dependencies do.
-> I currently do not plan on integrating native support for MacOS, Linux, Android or others but you can compile the libraries yourself and linking them.
+> I currently do not plan on integrating native support for MacOS, Linux, Android or others but you can compile the libraries yourself and link them.
 
 ## Installation & Usage
 
