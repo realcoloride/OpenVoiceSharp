@@ -65,7 +65,7 @@ soon enough:tm:
 
 - [NAudio](https://github.com/naudio/NAudio) - Licensed MIT
 - [OpusDotNet](https://github.com/mrphil2105/OpusDotNet) - Licensed MIT
-- WebRtcVadSharp & [WebRTC](https://webrtc.org/) - Licensed [MIT](https://github.com/ladenedge/WebRtcVadSharp) & [Other](https://webrtc.org/support/license)
+- [WebRtcVadSharp](https://github.com/ladenedge/WebRtcVadSharp) & [WebRTC](https://webrtc.org/) - Licensed [MIT](https://github.com/ladenedge/WebRtcVadSharp) & [Other](https://webrtc.org/support/license)
 - [YellowDogMan.RRNoise.NET](https://github.com/Yellow-Dog-Man/RNNoise.Net) - Licensed MIT 
 
 more soon:tm:
