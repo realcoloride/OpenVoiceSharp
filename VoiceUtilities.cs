@@ -9,7 +9,7 @@
         /// <param name="float32">Float32 size is half</param>
         /// <returns></returns>
         public static int GetSampleSize(int sampleRate, int timeLengthMs, int channels, bool float32 = false) 
-            => (int)(sampleRate * 16f / 8f * (timeLengthMs / 1000f)) * channels / (float32 ? 1 : 2);
+            => (int)(sampleRate * 16f / 8f * (timeLengthMs / 1000f)) * channels / (float32 ? 2 : 1);
 
         /// <summary>
         /// Gets the sample size for a frame.
