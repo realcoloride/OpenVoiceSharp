@@ -2,8 +2,23 @@
 {
     public static class VoiceUtilities
     {
-        public static int GetSampleSize(int sampleRate, int timeLengthMs, int channels) 
-            => (int)(sampleRate * 16f / 8f * (timeLengthMs / 1000f)) * channels;
+        /// <summary>
+        /// Gets the sample size for a frame.
+        /// </summary>
+        /// <param name="channels">Set 1 for mono and 2 for stereo</param>
+        /// <param name="float32">Float32 size is half</param>
+        /// <returns></returns>
+        public static int GetSampleSize(int sampleRate, int timeLengthMs, int channels, bool float32 = false) 
+            => (int)(sampleRate * 16f / 8f * (timeLengthMs / 1000f)) * channels / (float32 ? 1 : 2);
+
+        /// <summary>
+        /// Gets the sample size for a frame.
+        /// </summary>
+        /// <param name="channels">Set 1 for mono and 2 for stereo</param>
+        /// <param name="float32">Float32 size is half</param>
+        /// <returns></returns>
+        public static int GetSampleSize(int channels, bool float32 = false)
+            => GetSampleSize(VoiceChatInterface.SampleRate, VoiceChatInterface.FrameLength, channels, float32);
 
         /// <summary>
         /// Converts 16 bit PCM data into float 32.
