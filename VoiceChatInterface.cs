@@ -121,7 +121,7 @@ namespace OpenVoiceSharp
             int channels = ChannelsAmount;
 
             // fill float samples for noise suppression
-            FloatSamples = new float[VoiceUtilities.GetSampleSize(SampleRate, FrameLength, channels) / 2];
+            FloatSamples = new float[VoiceUtilities.GetSampleSize(channels) / 2];
 
             // create opus encoder/decoder
             OpusEncoder = new(
