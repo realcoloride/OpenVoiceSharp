@@ -4,6 +4,9 @@ Agnostic VoIP Voice Chat and Audio Streaming C# library.
 
 ## Introduction
 
+>[!WARNING]
+>This package is not ready to use and is in work in progress. Please come back later!
+
 **OpenVoiceSharp** is an extremely simple, basic compact library that allows for real time VoIP (Voice over IP) voice chat and audio streaming. It allows for any app or game to embed voice chatting functionality.
 
 **OpenVoiceSharp** utilizes **Opus** as codec under the hood and **RNNoise** for basic (toggleable) noise suppression and **WebRTC** VAD (voice activity detection).
