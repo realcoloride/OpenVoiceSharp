@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>OpenVoiceSharp</Title>
@@ -16,12 +16,14 @@
     <PackageReleaseNotes>More comments and details for documentation.</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <LangVersion>11.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="OpusDotNet" Version="1.0.3" />
+    <PackageReference Include="System.Memory" Version="4.5.5" />
     <PackageReference Include="WebRtcVadSharp" Version="1.3.2" />
     <PackageReference Include="YellowDogMan.RRNoise.NET" Version="0.1.6" />
   </ItemGroup>
