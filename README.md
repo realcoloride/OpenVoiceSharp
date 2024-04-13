@@ -6,7 +6,7 @@ Agnostic VoIP Voice Chat and Audio Streaming C# library.
 
 **OpenVoiceSharp** is an extremely simple, basic compact library that allows for real time VoIP (Voice over IP) voice chat and audio streaming. It allows for any app or game to embed voice chatting functionality.
 
-**OpenVoiceSharp** utilizes **Opus** as codec under the hood and **RNNoise** for basic (toggleable) noise suppression and **WebRTC** VAD (voice activity detection) for voice detection.
+**OpenVoiceSharp** utilizes **Opus** as codec under the hood and **RNNoise** for basic (toggleable) noise suppression and **WebRTC** VAD (voice activity detection).
 
 **OpenVoiceSharp** also has a dedicated class (`VoiceUtilities`) for converting PCM to float formats depending on use cases for engines.
 
@@ -36,13 +36,19 @@ So upon learning how to make VoIP myself, I decided to share the knowledge into 
 
 ## Requirements
 
-soon enough:tm:
+- Windows (64 bit)
+- .NET 6.0 and higher
+- Visual Studio
 
-## Installation
+> [!WARNING]
+> **OpenVoiceSharp** currently only supports Windows 64 bit, atleast the dependencies do.
+> I currently do not plan on integrating native support for MacOS, Linux, Android or others but you can compile the libraries yourself and link them.
 
-soon enough:tm:
+## Installation & Usage
 
-## Usage
+Everything you need to know or do can be found [in the wiki](https://github.com/realcoloride/OpenVoiceSharp/wiki).
+
+## Contribute
 
 soon enough:tm:
 
@@ -50,8 +56,18 @@ soon enough:tm:
 
 soon enough:tm:
 
-## License & Disclaimer
+## Licenses & Disclaimer
 
-soon enough:tm:
+**OpenVoiceSharp** uses the following libraries, so by using **OpenVoiceSharp**, you accept their license's conditions.
+
+> [!TIP]  
+> Most of the libraries used by **OpenVoiceSharp** are MIT licensed, except for WebRTC's VAD, which contains the license from WebRTC.
+
+- [NAudio](https://github.com/naudio/NAudio) - Licensed [MIT](https://github.com/naudio/NAudio/blob/master/license.txt)
+- [OpusDotNet](https://github.com/mrphil2105/OpusDotNet) - Licensed [MIT](https://github.com/mrphil2105/OpusDotNet/blob/master/LICENSE.md)
+- [WebRtcVadSharp](https://github.com/ladenedge/WebRtcVadSharp) & [WebRTC](https://webrtc.org/) - Licensed [MIT](https://github.com/ladenedge/WebRtcVadSharp/blob/main/LICENSE) & [Other](https://webrtc.org/support/license)
+- [YellowDogMan.RRNoise.NET](https://github.com/Yellow-Dog-Man/RNNoise.Net) - Licensed [MIT](https://github.com/Yellow-Dog-Man/RNNoise.Net/blob/main/LICENSE) 
+
+more soon:tm:
 
 (real)coloride - 2024, Licensed MIT.
