@@ -40,7 +40,7 @@ So upon learning how to make VoIP myself, I decided to share the knowledge into 
 ## Requirements
 
 - Windows (64 bit)
-- .NET 6.0 and higher or support for .NET Standard 2.0
+- .NET 6.0 and higher or support for .NET Standard 2.1
 - Visual Studio
 
 > [!WARNING]
