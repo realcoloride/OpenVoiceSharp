@@ -102,7 +102,7 @@
         /// Creates a circular audio buffer.
         /// </summary>
         /// <param name="chunkSize">Chunk raw size of ONE frame. Use VoiceUtilities if you need to figure out for your sample.</param>
-        /// <param name="amountOfChunks">Amount of chunks the circular audio buffer can take in. Higher values are usually more stable and lower values usually cause more audio cracking.</param>
+        /// <param name="amountOfChunks">Amount of chunks the circular audio buffer can take in. Higher values are usually more stable and lower values usually cause more audio cracking, but will do more latency (20 * x ms).</param>
         public CircularAudioBuffer(int chunkSize, int amountOfChunks = 18)
         {
             ChunkSize = chunkSize;
