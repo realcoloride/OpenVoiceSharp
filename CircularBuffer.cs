@@ -7,12 +7,12 @@
 
     /// <summary>
     /// Creates a circular audio buffer that can be read and written.
-    /// Takes in chunks/frames of audio and can be read.
+    /// Takes in chunks/frames of audio (or any struct).
     /// It is recommended to wait for the buffer to be full to read the entirety of it.
     /// Useful for Unity or other engines that do not support streamed pcm reading by default.
     /// </summary>
     /// <typeparam name="T">Byte/short/float depending on your needs.</typeparam>
-    public class CircularAudioBuffer<T>
+    public struct CircularAudioBuffer<T> where T: struct
     {
         /// <summary>
         /// The raw length of the buffer, in samples.
@@ -23,13 +23,14 @@
         /// </summary>
         public int ChunkSize { get; private set; }
 
-        public int BufferAvailable => ChunksAvailable * ChunkSize;
+        public readonly int BufferAvailable => ChunksAvailable * ChunkSize;
         public int ChunksAvailable = 0;
 
         private readonly T[] Buffer;
-        public bool BufferFull => BufferAvailable == BufferLength;
 
-        public bool CanReadChunk => ChunksAvailable > 0;
+        public readonly bool BufferFull => BufferAvailable == BufferLength;
+
+        public readonly bool CanReadChunk => ChunksAvailable > 0;
 
         // no need to do a for loop to rewrite the buffer.
         // just dont give it.
@@ -73,6 +74,7 @@
             // read everything thats available
             return Buffer[0..available];
         }
+
         /// <summary>
         /// Reads all the buffer that is available and copies it to another buffer.
         /// It is highly recommended you wait for it to be full to read.
@@ -102,7 +104,7 @@
         /// Creates a circular audio buffer.
         /// </summary>
         /// <param name="chunkSize">Chunk raw size of ONE frame. Use VoiceUtilities if you need to figure out for your sample.</param>
-        /// <param name="amountOfChunks">Amount of chunks the circular audio buffer can take in. Higher values are usually more stable and lower values usually cause more audio cracking, but will do more latency (20 * x ms).</param>
+        /// <param name="amountOfChunks">Amount of chunks the circular audio buffer can take in. Higher values are usually more stable and lower values usually cause more audio cracking, but will do more latency (20 * amountOfChunks ms).</param>
         public CircularAudioBuffer(int chunkSize, int amountOfChunks = 18)
         {
             ChunkSize = chunkSize;
