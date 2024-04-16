@@ -18,6 +18,8 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <Version>1.0.2</Version>
     <LangVersion>11.0</LangVersion>
+    <IncludeSymbols>False</IncludeSymbols>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,18 +31,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="LICENSE">
+    <None Include="LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Update="openvoicesharp.png">
+    <None Include="openvoicesharp.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Update="README.md">
+    <None Include="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-
 </Project>
