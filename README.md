@@ -67,10 +67,11 @@ soon enough:tm:
 > Most of the libraries used by **OpenVoiceSharp** are MIT licensed, except for WebRTC's VAD, which contains the license from WebRTC.
 
 - [NAudio](https://github.com/naudio/NAudio) - Licensed [MIT](https://github.com/naudio/NAudio/blob/master/license.txt)
+- [Opus](https://opus-codec.org/) - Licensed [BSD](https://opus-codec.org/license/)
 - [OpusDotNet](https://github.com/mrphil2105/OpusDotNet) - Licensed [MIT](https://github.com/mrphil2105/OpusDotNet/blob/master/LICENSE.md)
 - [WebRtcVadSharp](https://github.com/ladenedge/WebRtcVadSharp) & [WebRTC](https://webrtc.org/) - Licensed [MIT](https://github.com/ladenedge/WebRtcVadSharp/blob/main/LICENSE) & [Other](https://webrtc.org/support/license)
 - [YellowDogMan.RRNoise.NET](https://github.com/Yellow-Dog-Man/RNNoise.Net) - Licensed [MIT](https://github.com/Yellow-Dog-Man/RNNoise.Net/blob/main/LICENSE) 
 
-more soon:tm:
+_As of this library, just good old MIT._
 
-(real)coloride - 2024, Licensed MIT.
+##### &copy; (real)coloride - 2024 | Licensed MIT
