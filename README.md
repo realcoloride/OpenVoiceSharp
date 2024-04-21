@@ -53,7 +53,17 @@ Everything you need to know or do can be found [in the wiki](https://github.com/
 
 ## Contribute
 
-soon enough:tm:
+If you wish to contribute, you have a few ways:
+
+**By supporting the project:**
+- 🗣️ Feedback, ideas, or bug reports can be opened talked through the Discord server or through [Issues](https://github.com/realcoloride/OpenVoiceSharp/issues).
+- 🌟 Leave a star or share this project.
+
+**Or sending me a coffee:**
+
+💖 **I do those projects out of pure passion and love for the craft.** All my open source projects will remain free to use forever. 
+
+☕ **If you wish to support me, send me a coffee on ko.fi:** https://ko-fi.com/coloride
 
 ## Troubleshooting
 
