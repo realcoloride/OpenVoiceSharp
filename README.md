@@ -65,10 +65,6 @@ If you wish to contribute, you have a few ways:
 
 ☕ **If you wish to support me, send me a coffee on ko.fi:** https://ko-fi.com/coloride
 
-## Troubleshooting
-
-soon enough:tm:
-
 ## Licenses & Disclaimer
 
 **OpenVoiceSharp** uses the following libraries, so by using **OpenVoiceSharp**, you accept their license's conditions.
