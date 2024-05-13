@@ -32,6 +32,7 @@ So upon learning how to make VoIP myself, I decided to share the knowledge into 
 - 🔊 Customizable bitrate: make audio **crystal crisp** or not, it depends on you! (Supports from 8kbps up to 512kbps)
 - 🍃 Basic noise suppression using **RNNoise** (can be toggled)
 - 🧪 Basic voice conversion utilies: convert 16 bit PCM to float 32 PCM and so on.
+- 🗣️ Voice activity detection (VAD): out of the box basic voice activity detection using **WebRTC's VAD**.
 
 > [!NOTE]  
 > **OpenVoiceSharp** is meant to be extremely basic and straightforward. Audio playback, modification (effects or more) and features such as groups, teams, muting should be left to implement by yourself. 
