@@ -13,10 +13,10 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/realcoloride/OpenVoiceSharp</PackageProjectUrl>
     <PackageTags>voice; vc; voice-chat; voip; voicechat; audiostreaming; audio; realtime</PackageTags>
-    <PackageReleaseNotes>Support for unity </PackageReleaseNotes>
+    <PackageReleaseNotes>Changed copying via array in circular buffer for optimization</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <LangVersion>11.0</LangVersion>
     <IncludeSymbols>False</IncludeSymbols>
 

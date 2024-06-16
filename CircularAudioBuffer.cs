@@ -1,4 +1,6 @@
-﻿namespace OpenVoiceSharp
+﻿using System;
+
+namespace OpenVoiceSharp
 {
     public enum RecommendedChunkAmount
     {
@@ -96,7 +98,7 @@
             if (chunk.Length != ChunkSize) throw new Exception($"Invalid chunk size. Submitted {chunk.Length} - should be {ChunkSize}");
 
             // copy to
-            chunk.CopyTo(Buffer, BufferAvailable);
+            Array.Copy(chunk, 0, Buffer, BufferAvailable, chunk.Length);
             ChunksAvailable++;
         }
 
